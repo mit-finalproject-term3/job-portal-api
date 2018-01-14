@@ -1,0 +1,35 @@
+{
+  "name": "JobApplication",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "status": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "applicant": {
+      "type": "belongsTo",
+      "model": "Applicant",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "job": {
+      "type": "belongsTo",
+      "model": "Job",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

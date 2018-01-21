@@ -16,18 +16,12 @@
     "applicant": {
       "type": "belongsTo",
       "model": "Applicant",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
+      "foreignKey": ""
     },
     "job": {
       "type": "belongsTo",
       "model": "Job",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
+      "foreignKey": ""
     }
   },
   "acls": [],

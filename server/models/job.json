@@ -16,12 +16,10 @@
       "required": true
     },
     "location": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
-    "salary": {
-      "type": "number",
-      "required": true
+    "compensation": {
+      "type": "number"
     },
     "type": {
       "type": "string",

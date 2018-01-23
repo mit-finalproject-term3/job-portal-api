@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-  db: {
+  mongo: {
     connector: 'mongodb',
     name: 'mongo',
-    url: process.env.DB_URI,
+    url: process.env.MONGO_URI,
   },
 };

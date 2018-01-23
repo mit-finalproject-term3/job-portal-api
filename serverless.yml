@@ -1,0 +1,39 @@
+service: job-portal-api
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: ap-southeast-2
+  environment:
+    MONGO_URI: ${self:custom.secrets.MONGO_URI}
+plugins:
+  - serverless-offline
+  - serverless-apigw-binary
+  - serverless-secrets-plugin
+
+functions:
+  api:
+    handler: lambda.handler
+    events:
+      - http: ANY {proxy+}
+
+custom:
+  secrets: ${file(secrets.${opt:stage, self:provider.stage}.yml)}
+  apigwBinary:
+    types:
+      - 'application/javascript'
+      - 'image/jpeg'
+      - 'text/html'
+      - 'application/octet-stream'
+      - 'font/eot'
+      - 'font/opentype'
+      - 'font/otf'
+      - 'image/jpeg'
+      - 'image/png'
+      - 'image/svg+xml'
+      - 'text/comma-separated-values'
+      - 'text/css'
+      - 'text/html'
+      - 'text/javascript'
+      - 'text/plain'
+      - 'text/text'
+      - 'text/xml'

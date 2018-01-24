@@ -8,7 +8,8 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "deploy": "serverless deploy --stage prod"
   },
   "dependencies": {
     "aws-sdk": "^2.130.0",
@@ -17,6 +18,7 @@
     "cors": "^2.5.2",
     "helmet": "^1.3.0",
     "loopback": "^3.0.0",
+    "loopback-auth0-jwt": "^1.0.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^5.0.0",
     "loopback-component-migrate": "^0.4.0",

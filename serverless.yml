@@ -3,8 +3,7 @@ provider:
   name: aws
   runtime: nodejs6.10
   region: ap-southeast-2
-  environment:
-    MONGO_URI: ${self:custom.secrets.MONGO_URI}
+    
 plugins:
   - serverless-offline
   - serverless-apigw-binary
@@ -13,11 +12,11 @@ plugins:
 functions:
   api:
     handler: lambda.handler
+    environment: ${file(secrets.${opt:stage, self:provider.stage}.yml)}
     events:
       - http: ANY {proxy+}
 
 custom:
-  secrets: ${file(secrets.${opt:stage, self:provider.stage}.yml)}
   apigwBinary:
     types:
       - 'application/javascript'
